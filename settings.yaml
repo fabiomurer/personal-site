@@ -1,0 +1,11 @@
+sitename: "SSSG"
+siteurl: "http://example.com"
+gitrepo: "https://github.com/zwirgioIlredelCodice/sssg"
+language: en
+
+
+navbar:
+  - name: Home
+    url:  .
+  - name: About
+    url: about
