@@ -5,4 +5,4 @@ title: About
 
 # What is this??
 
-lezzo rezzo mezzo, is my own stupid static site generator
+My own little island lost into the sea of the Web
