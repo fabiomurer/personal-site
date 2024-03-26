@@ -1,10 +1,3 @@
-RESOURCEDIR = resources
-OUTDIR := build
-RELEASEDIR = $(OUTDIR)/release
-TESTINGDIR = $(OUTDIR)/testing
-SOURCEDIR = source
-# theme stuff
-THEMEDIR = theme
 
 TESTINGURL := http://0.0.0.0:8080
 
@@ -56,7 +49,7 @@ $(HTMLS-TESTING): $(TESTINGDIR)/%/index.html: $(SOURCEDIR)/%.md $(THEMEDIR)/*
 	mkdir -p $(@D)
 	pandoc $(PANDOC-TESTING-ARGS) $< -o $@
 
-serve:
+serve: testing
 	python3 -m http.server 8080 -d $(TESTINGDIR)
 
 clean: 
