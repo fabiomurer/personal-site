@@ -1,3 +1,10 @@
+RESOURCEDIR = resources
+OUTDIR := build
+RELEASEDIR = $(OUTDIR)/release
+TESTINGDIR = $(OUTDIR)/testing
+SOURCEDIR = source
+# theme stuff
+THEMEDIR = theme
 
 TESTINGURL := http://0.0.0.0:8080
 
