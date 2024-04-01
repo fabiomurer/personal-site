@@ -2,8 +2,7 @@
 title: Myname
 ---
 
-# My name
-hehe, can be represented in a hexadecimal form
+# My name is Fabio but you can call me
 
 - Unsigned hexadecimal integer: `FAB10`
 - Binary: `00000000000011111010101100010000`
@@ -34,8 +33,7 @@ int main(void) {
 
     printf(
         "\
-# My name\n\
-hehe, can be represented in a hexadecimal form\n\
+# My name is Fabio but you can call me\n\
 \n\
 - Unsigned hexadecimal integer: `%X`\n\
 - Binary: `%s`\n\

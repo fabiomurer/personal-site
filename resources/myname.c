@@ -16,8 +16,7 @@ int main(void) {
 
     printf(
         "\
-# My name\n\
-hehe, can be represented in a hexadecimal form\n\
+# My name is Fabio but you can call me\n\
 \n\
 - Unsigned hexadecimal integer: `%X`\n\
 - Binary: `%s`\n\
