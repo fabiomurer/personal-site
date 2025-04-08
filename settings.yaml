@@ -1,6 +1,6 @@
 sitename: "sourcenode"
 siteurl: "https://fabiomurer.org"
-gitrepo: "https://github.com/zwirgioIlredelCodice/personal-site"
+gitrepo: "https://github.com/fabiomurer/personal-site"
 language: en
 
 
@@ -9,3 +9,5 @@ navbar:
     url:  .
   - name: About
     url: about/
+  - name: Contacts
+    url: contacts/
