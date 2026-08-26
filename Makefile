@@ -19,11 +19,11 @@ RESOURCES_THEME_OUT_TESTING := $(RESOURCES_THEME_IN:$(THEMEDIR)/%=$(TESTINGDIR)/
 RESOURCES_BASE_OUT_RELEASE := $(RESOURCES_BASE_IN:%=$(RELEASEDIR)/%)
 RESOURCES_BASE_OUT_TESTING := $(RESOURCES_BASE_IN:%=$(TESTINGDIR)/%)
 
-PANDOC-BASE-ARGS := -t html5 --standalone --mathml --template $(THEMEDIR)/base.html --metadata-file settings.yaml
+PANDOC-BASE-ARGS := -t html5 --standalone --mathml --template $(THEMEDIR)/base.html --metadata-file settings.yaml --lua-filter=filters/projectslist.lua
 PANDOC-TESTING-ARGS := $(PANDOC-BASE-ARGS) --metadata=siteurl:"$(TESTINGURL)"
 
 generateprojets: scripts/generate_projects.bash
-	bash scripts/generate_projects.bash scripts/github-projects.yml
+	bash scripts/generate_projects.bash settings.yaml
 
 prescripts: generateprojets
 	echo "prescript finisced"

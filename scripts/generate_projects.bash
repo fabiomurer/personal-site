@@ -46,6 +46,8 @@ process_repo() {
 title: "$name"
 ---
 
+<a href="$url">GitHub link</a>
+
 EOF
 
   # download and fix
@@ -55,7 +57,7 @@ EOF
 # main
 mkdir -p "$OUTPUT_DIR"
 
-yq -c '.[]' "$YAML_FILE" | while read -r item; do
+yq -c '.projects[]' "$YAML_FILE" | while read -r item; do
   process_repo "$item"
 done
 

@@ -6,6 +6,11 @@ title: "Sourcenode <br/> Fabio Murer's Personal Site"
 
 ![Gronzio](resources/gronzio.webp)
 
-## posts
+## Projects
+
+::: {#projectslist}
+:::
+
+## Posts
 
 - [myname](myname/)

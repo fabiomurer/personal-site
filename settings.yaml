@@ -11,3 +11,11 @@ navbar:
     url: about/
   - name: Contacts
     url: contacts/
+
+projects:
+  - name: "10x12chess"
+    url: "https://github.com/fabiomurer/10x12chess"
+    branch: "master"
+  - name: "syskvm"
+    url: "https://github.com/fabiomurer/syskvm"
+    branch: "main"
