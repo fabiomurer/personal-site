@@ -1,0 +1,6 @@
+- name: "10x12 Chess"
+  url: "https://github.com/fabiomurer/10x12chess"
+  branch: "master" # optional, defaults to "main" if omitted
+- name: "Syskvm"
+  url: "https://github.com/fabiomurer/syskvm"
+  branch: "main"

@@ -22,9 +22,15 @@ RESOURCES_BASE_OUT_TESTING := $(RESOURCES_BASE_IN:%=$(TESTINGDIR)/%)
 PANDOC-BASE-ARGS := -t html5 --standalone --mathml --template $(THEMEDIR)/base.html --metadata-file settings.yaml
 PANDOC-TESTING-ARGS := $(PANDOC-BASE-ARGS) --metadata=siteurl:"$(TESTINGURL)"
 
-release: $(RESOURCES_THEME_OUT_RELEASE) $(RESOURCES_BASE_OUT_RELEASE) $(HTMLS-RELEASE) $(RELEASEDIR)/index.html
+generateprojets: scripts/generate_projects.bash
+	bash scripts/generate_projects.bash scripts/github-projects.yml
 
-testing: $(RESOURCES_THEME_OUT_TESTING) $(RESOURCES_BASE_OUT_TESTING) $(HTMLS-TESTING) $(TESTINGDIR)/index.html
+prescripts: generateprojets
+	echo "prescript finisced"
+
+release: prescripts $(RESOURCES_THEME_OUT_RELEASE) $(RESOURCES_BASE_OUT_RELEASE) $(HTMLS-RELEASE) $(RELEASEDIR)/index.html
+
+testing: prescripts $(RESOURCES_THEME_OUT_TESTING) $(RESOURCES_BASE_OUT_TESTING) $(HTMLS-TESTING) $(TESTINGDIR)/index.html
 
 $(RESOURCES_THEME_OUT_RELEASE): $(RELEASEDIR)/%: $(THEMEDIR)/%
 	mkdir -p $(@D)
@@ -58,6 +64,12 @@ $(HTMLS-TESTING): $(TESTINGDIR)/%/index.html: $(SOURCEDIR)/%.md $(THEMEDIR)/*
 
 serve: testing
 	python3 -m http.server 8080 -d $(TESTINGDIR)
+
+
+clean-generatedprojects:
+	rm -rf $(SOURCEDIR)/projects
+
+clean-prescript: clean-generatedprojects
 
 clean: 
 	rm -rf $(OUTDIR)
