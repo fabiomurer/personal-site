@@ -28,9 +28,18 @@ generateprojets: scripts/generate_projects.bash
 prescripts: generateprojets
 	echo "prescript finisced"
 
-release: prescripts $(RESOURCES_THEME_OUT_RELEASE) $(RESOURCES_BASE_OUT_RELEASE) $(HTMLS-RELEASE) $(RELEASEDIR)/index.html
+.PHONY: release testing prescripts generateprojets serve clean release-build testing-build
 
-testing: prescripts $(RESOURCES_THEME_OUT_TESTING) $(RESOURCES_BASE_OUT_TESTING) $(HTMLS-TESTING) $(TESTINGDIR)/index.html
+# Public targets call prescripts first, then re-run Make for the build step
+release: prescripts
+	$(MAKE) release-build
+
+testing: prescripts
+	$(MAKE) testing-build
+
+release-build: $(RESOURCES_THEME_OUT_RELEASE) $(RESOURCES_BASE_OUT_RELEASE) $(HTMLS-RELEASE) $(RELEASEDIR)/index.html
+
+testing-build: $(RESOURCES_THEME_OUT_TESTING) $(RESOURCES_BASE_OUT_TESTING) $(HTMLS-TESTING) $(TESTINGDIR)/index.html
 
 $(RESOURCES_THEME_OUT_RELEASE): $(RELEASEDIR)/%: $(THEMEDIR)/%
 	mkdir -p $(@D)

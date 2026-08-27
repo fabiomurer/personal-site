@@ -13,9 +13,19 @@ navbar:
     url: contacts/
 
 projects:
-  - name: "10x12chess"
-    url: "https://github.com/fabiomurer/10x12chess"
-    branch: "master"
+  - name: "marchingdeep"
+    url: "https://github.com/fabiomurer/marchingdeep"
+    branch: "main"
   - name: "syskvm"
     url: "https://github.com/fabiomurer/syskvm"
     branch: "main"
+  - name: "UNIBackup"
+    url: "https://github.com/fabiomurer/UNIBackup"
+    branch: "master"
+  - name: connect4win
+    url: "https://github.com/fabiomurer/connect4win"
+    branch: "master"
+  - name: "10x12chess"
+    url: "https://github.com/fabiomurer/10x12chess"
+    branch: "master"
+  
